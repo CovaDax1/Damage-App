@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="425678a4-677a-4064-bbbf-d2359fdcc3fc" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="3">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/Main.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="506">
+                    <caret line="80" selection-start-line="80" selection-end-line="80" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/Target.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="571">
+                    <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#1440#1441#0" expanded="true" />
+                      <element signature="e#1504#1505#0" expanded="true" />
+                      <element signature="e#1562#1563#0" expanded="true" />
+                      <element signature="e#1596#1597#0" expanded="true" />
+                      <element signature="e#1704#1705#0" expanded="true" />
+                      <element signature="e#1739#1740#0" expanded="true" />
+                      <element signature="e#1772#1773#0" expanded="true" />
+                      <element signature="e#1801#1802#0" expanded="true" />
+                      <element signature="e#1843#1844#0" expanded="true" />
+                      <element signature="e#1876#1877#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxGPF.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="219">
+                    <caret line="120" selection-start-line="136" selection-start-column="35" selection-end-line="146" selection-end-column="9" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxGWF.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="3025">
+                    <caret line="249" column="8" selection-start-line="249" selection-start-column="8" selection-end-line="249" selection-end-column="8" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-785457821">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="315" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="315" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="4" />
+          <entry key="java" value="32614" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="32614" />
+          <entry key="PLAIN_TEXT" value="4" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/Weapon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#938#939#0" expanded="true" />
+                <element signature="e#978#979#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1046#1047#0" expanded="true" />
+                <element signature="e#2162#2163#0" expanded="true" />
+                <element signature="e#2233#2234#0" expanded="true" />
+                <element signature="e#2455#2456#0" expanded="true" />
+                <element signature="e#2519#2520#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDax.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="131" selection-start-line="131" selection-end-line="131" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/BaseCharacter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3151#3152#0" expanded="true" />
+                <element signature="e#3182#3183#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxPM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-781">
+              <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Glaive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="667">
+              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxGPF.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1625">
+              <caret line="129" selection-start-line="129" selection-end-line="129" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>target.getHp() &gt; (target.getMaxHp() / 2)</find>
+      <find>target.getHp() &gt; target.getMaxHp() / 2</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>+= num</replace>
+      <replace>target.isBloodied()</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/Spellcaster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PactCaster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/Caster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/SpellCaster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/Spellcaster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/Spellcaster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/PactCaster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/global/Die.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/Smite.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/PaladinImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/Paladin.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/BaseClass.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/MagicAdept.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/OathOfVengeance.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/SpellCaster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/AbilityScore.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/action/Attack.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Weapon.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/MeleeWeapon.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/attributes/Versatile.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Longsword.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/RangedWeapon.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/MeleeWeapon.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/action/MultiAttack.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/global/d6.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/global/d12.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/global/d8.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/global/d20.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/global/d4.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/global/d10.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Unarmed.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/feat/GreatWeaponMastery.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/armor/Unarmored.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/armor/UnarmoredDefence.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/SmiteDie.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerCharacter.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/BaseCharacter.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/CovaDax.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxASI.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/GreatWeapon.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/PolearmMaster.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/Polearm.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Greatsword.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Glaive.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/Weapon.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/Target.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDax.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxGPF.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxPM.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxGWF.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Damage App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Damage App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Damage App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Damage App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Damage App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Damage App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="damagesimulator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Damage App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Damage App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="damagesimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="equipment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Damage App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Damage App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="damagesimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="equipment" type="462c0819:PsiDirectoryNode" />
+              <item name="weapon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Damage App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Damage App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="damagesimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="equipment" type="462c0819:PsiDirectoryNode" />
+              <item name="weapon" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Damage App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Damage App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="damagesimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="PlayerCharacter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Damage App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Damage App" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="damagesimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="PlayerCharacter" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546980901254" />
+    <property name="extract.method.default.visibility" value="private" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.damagesimulator.PlayerCharacter.build" />
+      <recent name="com.damagesimulator.global" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.damagesimulator.equipment.weapon" />
+      <recent name="com.damagesimulator.PlayerCharacter.build" />
+      <recent name="com.damagesimulator.equipment.weapon.attributes" />
+      <recent name="com.damagesimulator.PlayerCharacter" />
+      <recent name="com.damagesimulator.PlayerCharacter.PlayerClass.paladin" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.damagesimulator.Main" />
+      <module name="Damage App" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="425678a4-677a-4064-bbbf-d2359fdcc3fc" name="Default Changelist" comment="" />
+      <created>1545145598429</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545145598429</updated>
+      <workItem from="1545145602375" duration="11237000" />
+      <workItem from="1545167504052" duration="592000" />
+      <workItem from="1545224773899" duration="8239000" />
+      <workItem from="1545310700244" duration="5271000" />
+      <workItem from="1546010111048" duration="7260000" />
+      <workItem from="1546018803008" duration="9553000" />
+      <workItem from="1546433699877" duration="185000" />
+      <workItem from="1546880399668" duration="31000" />
+      <workItem from="1546880935641" duration="6963000" />
+      <workItem from="1546952425707" duration="25246000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="74577000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7368421" visible="true" weight="0.19936034" />
+      <window_info id="Structure" order="1" sideWeight="0.2631579" side_tool="true" weight="0.16151386" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.36650082" side_tool="true" weight="0.1684435" />
+      <window_info id="JavaEE:App" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4989339" weight="0.3291714" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49093816" weight="0.29284903" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="5" sideWeight="0.49626866" visible="true" weight="0.323496" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32925472" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32925472" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5090618" side_tool="true" weight="0.20689656" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49413645" weight="0.3291714" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" weight="0.32925472" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.32925472" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32925472" />
+      <window_info anchor="bottom" id="Spring" order="15" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.18283582" />
+      <window_info anchor="right" id="Database" order="6" weight="0.12953092" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32995737" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7368421" visible="true" weight="0.19936034" />
+      <window_info id="Structure" order="1" sideWeight="0.2631579" side_tool="true" weight="0.16151386" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.36650082" side_tool="true" weight="0.1684435" />
+      <window_info id="JavaEE:App" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4989339" weight="0.3291714" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49093816" weight="0.29284903" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49626866" visible="true" weight="0.323496" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32925472" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32925472" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5090618" side_tool="true" weight="0.20689656" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49413645" weight="0.3291714" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" weight="0.32925472" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" weight="0.32925472" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32925472" />
+      <window_info anchor="bottom" id="Spring" order="15" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.18283582" />
+      <window_info anchor="right" id="Database" order="6" weight="0.12953092" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32995737" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32995737" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/damagesimulator/Main.java</url>
+          <line>80</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/PowerAttack.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/ClassLevel.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/Caster.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/SpellCaster.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PactCaster.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/PactCaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/PaladinImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/Paladin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/MagicAdept.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/OathOfVengeance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/SpellCaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/BaseClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/AbilityScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/attributes/Versatile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Longsword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/attributes/DamageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/RangedWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="e#300#301#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/action/WeaponAttack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/action/MeleeWeaponAttack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/global/d12.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/global/d20.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/global/d4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="e#206#207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/global/d10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/global/d6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#173#174#0" expanded="true" />
+            <element signature="e#210#211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/global/d8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="20" selection-start-line="20" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/action/Attack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Unarmed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="55" lean-forward="true" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+            <element signature="e#1072#1073#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/action/MultiAttack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/feat/GreatWeaponMastery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/armor/UnarmoredDefence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/armor/HalfPlate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/armor/Unarmored.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/global/Spell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/global/Die.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerClass/paladin/SmiteDie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding>
+            <element signature="e#164#165#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/PlayerCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/MeleeWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/PolearmMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/BaseCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3151#3152#0" expanded="true" />
+            <element signature="e#3182#3183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/Polearm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/GreatWeapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Greatsword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="29" selection-start-line="29" selection-end-line="42" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/Glaive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/equipment/weapon/core/Weapon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1046#1047#0" expanded="true" />
+            <element signature="e#2162#2163#0" expanded="true" />
+            <element signature="e#2233#2234#0" expanded="true" />
+            <element signature="e#2455#2456#0" expanded="true" />
+            <element signature="e#2519#2520#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxASI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/Target.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1504#1505#0" expanded="true" />
+            <element signature="e#1562#1563#0" expanded="true" />
+            <element signature="e#1596#1597#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1739#1740#0" expanded="true" />
+            <element signature="e#1772#1773#0" expanded="true" />
+            <element signature="e#1801#1802#0" expanded="true" />
+            <element signature="e#1843#1844#0" expanded="true" />
+            <element signature="e#1876#1877#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxPM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-781">
+          <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDax.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxGPF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="120" selection-start-line="136" selection-start-column="35" selection-end-line="146" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/damagesimulator/PlayerCharacter/build/CovaDaxGWF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3025">
+          <caret line="249" column="8" selection-start-line="249" selection-start-column="8" selection-end-line="249" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
