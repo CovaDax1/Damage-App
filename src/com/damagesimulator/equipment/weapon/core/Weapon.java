@@ -24,6 +24,18 @@ public abstract class Weapon implements Attack {
     protected Die damageDie;
     protected Die bonusDamageDie;
 
+    public Weapon(AbilityScore.AbilityScores abs) {
+        this.abilityScore = abs;
+        this.enchantmentBonus = 0;
+        this.enchantmentDamage = 0;
+    }
+
+    public Weapon(AbilityScore.AbilityScores abs, int enchantment) {
+        this.abilityScore = abs;
+        this.enchantmentBonus = enchantment;
+        this.enchantmentDamage = enchantment;
+    }
+
     public int getEnchantmentBonus() {
         return enchantmentBonus;
     }
@@ -44,28 +56,17 @@ public abstract class Weapon implements Attack {
         return light;
     }
 
-    public Weapon(AbilityScore.AbilityScores abs) {
-        this.abilityScore = abs;
-        this.enchantmentBonus = 0;
-        this.enchantmentDamage = 0;
-    }
-
-    public Weapon(AbilityScore.AbilityScores abs, int enchantment) {
-        this.abilityScore = abs;
-        this.enchantmentBonus = enchantment;
-        this.enchantmentDamage = enchantment;
-    }
-
     public AttackResult rollAttack(int toAttackBonus, Advantage advantage, int targetAc) {
         int attackRoll = d20.getDie().roll(advantage);
         if (attackRoll == 20) return AttackResult.CRIT;
         else if (attackRoll == 1) return AttackResult.MISS;
-        else return (attackRoll + toAttackBonus + getEnchantmentBonus() < targetAc) ? AttackResult.MISS : AttackResult.HIT;
+        else
+            return (attackRoll + toAttackBonus + getEnchantmentBonus() < targetAc) ? AttackResult.MISS : AttackResult.HIT;
     }
 
     public int rollDamage() {
         int bonusDamage = getEnchantmentDamage();
-        if(bonusDamageDie != null) bonusDamage += bonusDamageDie.roll();
+        if (bonusDamageDie != null) bonusDamage += bonusDamageDie.roll();
         return damageDie.roll() + bonusDamage;
     }
 
@@ -79,14 +80,15 @@ public abstract class Weapon implements Attack {
 
     private int getMaxEnchantmentDamage() {
         int bonusDamage = getEnchantmentDamage();
-        if(bonusDamageDie != null ) bonusDamage = this.bonusDamageDie.getNum() * this.bonusDamageDie.getDie();
+        if (bonusDamageDie != null) bonusDamage = this.bonusDamageDie.getNum() * this.bonusDamageDie.getDie();
         return bonusDamage;
     }
 
     public int getAverageDamage() {
-         int weaponDamage = this.damageDie.getNum() * ((1 + getMaxWeaponDamage()) / 2);
-         if(bonusDamageDie != null) weaponDamage += this.bonusDamageDie.getNum() * ((1 + getMaxEnchantmentDamage() / 2));
-         return weaponDamage;
+        int weaponDamage = this.damageDie.getNum() * ((1 + getMaxWeaponDamage()) / 2);
+        if (bonusDamageDie != null)
+            weaponDamage += this.bonusDamageDie.getNum() * ((1 + getMaxEnchantmentDamage() / 2));
+        return weaponDamage;
     }
 
     @Override

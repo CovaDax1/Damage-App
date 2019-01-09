@@ -35,6 +35,7 @@ public abstract class BaseCharacter {
     protected Unarmed unarmed = new Unarmed();
 
     protected boolean blessed;
+    protected boolean bonusActionAvailable;
 
     public BaseCharacter(AbilityScore strength, AbilityScore dexterity, AbilityScore constitution, AbilityScore intelligence, AbilityScore wisdom, AbilityScore charisma) {
         this.strength = strength;
@@ -119,40 +120,30 @@ public abstract class BaseCharacter {
 
     public void equipArmor(Armor armor) { this.armor = armor; }
 
-    public int getMhWeaponToHitBonus() {
-        int absMod = 0;
-        if (mhWeapon instanceof MeleeWeapon) {
-            if (!((MeleeWeapon) mhWeapon).finesse())
-                absMod = strength.getMod();
-            else
-                absMod = dexterity.getMod();
-        } else {
-            absMod = dexterity.getMod();
-        }
-        int bless = 0;
-        if(blessed) bless += d4.getDie().roll();
+    public int getToAttackBonus(Weapon weapon) {
+        return getAttackAbsBonus(weapon) + getProficiency() + weapon.getEnchantmentBonus() + (blessed ? d4.getDie().roll() : 0);
+    }
 
-        return absMod + getProficiency() + bless;
+    public int getToDamageBonus(Weapon weapon) {
+        return getAttackAbsBonus(weapon) + weapon.getEnchantmentBonus();
     }
 
     public int getAttackAbsBonus(Attack attack) {
-        int total = 0;
         switch(attack.getAttackAbilityScore()) {
             case STRENGTH:
-                total += this.strength.getMod(); break;
+                return this.strength.getMod();
             case DEXTERITY:
-                total += this.dexterity.getMod(); break;
+                return this.dexterity.getMod();
             case CONSTITUTION:
-                total += this.constitution.getMod(); break;
+                return this.constitution.getMod();
             case INTELLIGENCE:
-                total += this.intelligence.getMod(); break;
+                return this.intelligence.getMod();
             case WISDOM:
-                total += this.wisdom.getMod(); break;
+                return this.wisdom.getMod();
             case CHARISMA:
-                total += this.charisma.getMod(); break;
+                return this.charisma.getMod();
         }
-
-        return total + getProficiency();
+        return 0;
     }
 
     protected abstract int unarmedAttack(Target target, Advantage advantage, int attackBonus, int damageBonus);

@@ -8,10 +8,12 @@ import com.damagesimulator.PlayerCharacter.PlayerClass.paladin.OathOfVengeance;
 import com.damagesimulator.PlayerCharacter.PlayerClass.paladin.SmiteDie;
 import com.damagesimulator.PlayerCharacter.Target;
 import com.damagesimulator.PlayerCharacter.action.SpellAttack;
-import com.damagesimulator.PlayerCharacter.feat.GreatWeaponMastery;
 import com.damagesimulator.equipment.weapon.core.MeleeWeapon;
 import com.damagesimulator.equipment.weapon.core.Weapon;
 import com.damagesimulator.global.*;
+
+import static com.damagesimulator.global.AttackResult.CRIT;
+import static com.damagesimulator.global.AttackResult.MISS;
 
 public class CovaDax extends PlayerCharacter implements SpellCaster, OathOfVengeance {
     protected int layOnHands;
@@ -87,78 +89,102 @@ public class CovaDax extends PlayerCharacter implements SpellCaster, OathOfVenge
         return 0;
     }
 
-    //attack liberally
-    //spell smite as BA?
-    public int attackLiberally(MeleeWeapon weapon, Target target, Advantage advantage) {
+    //attack economically
+    //power attack if adv, smite using lowest first
+    // Max AC = attackBonus - damage/2 + 16
+    public int economicMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
+        this.bonusActionAvailable = true;
         int damage = 0;
-        int toAttackBonus = getAttackAbsBonus(weapon) + (blessed ? d4.getDie().roll() : 0);
-        int toDamageBonus = (weapon.finesse() && dexterity.getMod() > strength.getMod() ? dexterity.getMod() : strength.getMod());
+        for (int i = 0; i < 2; i++)
+            damage += rollEconomicAttack(weapon, target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
+        return damage;
+    }
 
-        for (int i = 0; i < 2; i++) {
-            AttackResult attackRoll = weaponAttack(weapon, target, advantage, toAttackBonus);
-            if (attackRoll != AttackResult.MISS) {
-                damage += weapon.rollDamage() + toDamageBonus;
-                damage += improvedSmite();
-                int smiteSlot = 0;
-                if(target.getHp() > target.getMaxHp() / 2) {
-                    smiteSlot = this.getHighestAvailableSpellSlot();
-                } else {
-                    smiteSlot = this.getLowestAvailableSpellSlot();
-                }
-                damage += smite(smiteSlot, target.isUndead());
-                if (attackRoll == AttackResult.CRIT) {
-                    damage += weapon.getMaxDamage();
-                    damage += smiteDie.maxDamage(smiteSlot, target.isUndead());
-                }
-            }
+    protected int rollEconomicAttack(MeleeWeapon weapon, Target target, Advantage advantage, int attackBonus, int damageBonus) {
+        int damage = 0;
+        AttackResult attackRoll = weaponAttack(weapon, target, advantage, attackBonus);
+        if(attackRoll != MISS) damage += rollEconomicDamage(weapon, target, damageBonus, attackRoll == CRIT);
+        return damage;
+    }
+
+    protected int rollEconomicDamage(MeleeWeapon weapon, Target target, int damageBonus, boolean crit) {
+        int damage = 0;
+        damage += weapon.rollDamage() + damageBonus;
+        damage += improvedSmite();
+        int smiteSlot = 0;
+        if (target.isBloodied())
+            smiteSlot = this.getLowestAvailableSpellSlot();
+        damage += smite(smiteSlot, target.isUndead());
+        if (crit) {
+            damage += weapon.getMaxDamage();
+            damage += smiteDie.maxDamage(smiteSlot, target.isUndead());
         }
         return damage;
     }
 
-    //attack economically
-    //smite using lowest first
-    public int attackEconomically(MeleeWeapon weapon, Target target, Advantage advantage) {
+    //attack liberally
+    //always power attack
+    // if target hp > half, smite using highest otherwise smite using lowest
+    // if kill or crit, cleave, otherwise polearm
+    public int liberalMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
+        this.bonusActionAvailable = true;
         int damage = 0;
-        int toAttackBonus = getAttackAbsBonus(weapon) + (blessed ? d4.getDie().roll() : 0);
+        int toAttackBonus = getAttackAbsBonus(weapon) +  (blessed ? d4.getDie().roll() : 0);
         int toDamageBonus = (weapon.finesse() && dexterity.getMod() > strength.getMod() ? dexterity.getMod() : strength.getMod());
+        for (int i = 0; i < 2; i++)
+            damage += rollLiberalAttack(weapon, target, advantage, toAttackBonus, toDamageBonus);
+        return damage;
+    }
 
-        for (int i = 0; i < 2; i++) {
-            AttackResult  attackRoll = weaponAttack(weapon, target, advantage, toAttackBonus);
-            if (attackRoll != AttackResult.MISS) {
-                damage += weapon.rollDamage() + toDamageBonus;
-                damage += improvedSmite();
-                int smiteSlot = 0;
-                if(target.isBloodied()) {
-                    smiteSlot = this.getLowestAvailableSpellSlot();
-                }
-                damage += smite(smiteSlot, target.isUndead());
-                if (attackRoll == AttackResult.CRIT) {
-                    damage += weapon.getMaxDamage();
-                    damage += smiteDie.maxDamage(smiteSlot, target.isUndead());
-                }
-            }
+    protected int rollLiberalAttack(MeleeWeapon weapon, Target target, Advantage advantage, int attackBonus, int damageBonus) {
+        int damage = 0;
+        AttackResult attackRoll = weaponAttack(weapon, target, advantage, attackBonus);
+        if(attackRoll != MISS) damage += rollEconomicDamage(weapon, target, damageBonus, attackRoll == CRIT);
+        return damage;
+    }
+
+    protected int rollLiberalDamage(MeleeWeapon weapon, Target target, int damageBonus, boolean crit) {
+        int damage = 0;
+        damage += weapon.rollDamage() + damageBonus;
+        damage += improvedSmite();
+        int smiteSlot = 0;
+        if(target.isBloodied())
+            smiteSlot = this.getHighestAvailableSpellSlot();
+        else
+            smiteSlot = this.getLowestAvailableSpellSlot();
+        damage += smite(smiteSlot, target.isUndead());
+        if (crit) {
+            damage += weapon.getMaxDamage();
+            damage += smiteDie.maxDamage(smiteSlot, target.isUndead());
         }
         return damage;
     }
 
     //attack conservatively
-    //no smite
-    public int attackConservatively(MeleeWeapon weapon, Target target, Advantage advantage) {
+    //power attack if adv, no smite
+    public int conservativeMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
+        this.bonusActionAvailable = true;
         int damage = 0;
-        int toAttackBonus = getAttackAbsBonus(weapon) + (blessed ? d4.getDie().roll() : 0);
+        int toAttackBonus = getAttackAbsBonus(weapon) +  (blessed ? d4.getDie().roll() : 0);
         int toDamageBonus = (weapon.finesse() && dexterity.getMod() > strength.getMod() ? dexterity.getMod() : strength.getMod());
+        for (int i = 0; i < 2; i++)
+            damage += rollConservativeAttack(weapon, target, advantage, toAttackBonus, toDamageBonus);
+        return damage;
+    }
 
-        for (int i = 0; i < 2; i++) {
-            AttackResult attackRoll = weaponAttack(weapon, target, advantage, toAttackBonus);
+    protected int  rollConservativeAttack(MeleeWeapon weapon, Target target, Advantage advantage, int attackBonus, int damageBonus) {
+        int damage = 0;
+        AttackResult attackRoll = weaponAttack(weapon, target, advantage, attackBonus);
+        if(attackRoll != MISS) damage +=  rollConservativeDamage(weapon, damageBonus, attackRoll == CRIT);
+        return damage;
+    }
 
-            if (attackRoll != AttackResult.MISS) {
-                damage += weapon.rollDamage() + toDamageBonus;
-                damage += improvedSmite();
-                if (attackRoll == AttackResult.CRIT) {
-                    damage += weapon.getMaxDamage();
-                }
-            }
-        }
+    protected int rollConservativeDamage(Weapon weapon, int damageBonus, boolean crit) {
+        int damage = 0;
+        damage += weapon.rollDamage() + damageBonus;
+        damage += improvedSmite();
+        if (crit)
+            damage += weapon.getMaxDamage();
         return damage;
     }
 

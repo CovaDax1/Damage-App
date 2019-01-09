@@ -1,11 +1,8 @@
 package com.damagesimulator;
 
 import com.damagesimulator.PlayerCharacter.Target;
-import com.damagesimulator.PlayerCharacter.build.CovaDax;
+import com.damagesimulator.PlayerCharacter.build.*;
 import com.damagesimulator.PlayerCharacter.PlayerClass.BaseClass;
-import com.damagesimulator.PlayerCharacter.build.CovaDaxASI;
-import com.damagesimulator.PlayerCharacter.build.CovaDaxGPF;
-import com.damagesimulator.PlayerCharacter.build.CovaDaxGWF;
 import com.damagesimulator.equipment.armor.Plate;
 import com.damagesimulator.equipment.weapon.Glaive;
 import com.damagesimulator.equipment.weapon.Greatsword;
@@ -33,7 +30,7 @@ public class Main {
         covaAsi.equipArmor(new Plate());
 //        covaAsi.bless();
 
-        System.out.println("\n\n -------ASI-------\n\n");
+        System.out.println("\n\n -------ASI-------");
 
         t = Target.generate();
         testCovaLiberal(covaAsi, t);
@@ -48,7 +45,7 @@ public class Main {
         covaGwm.equipArmor(new Plate());
 //        covaGwm.bless();
 
-        System.out.println("\n\n -------GREAT WEAPON MASTER-------\n\n");
+        System.out.println("\n\n -------GREAT WEAPON MASTER-------");
 
         t = Target.generate();
         testCovaLiberal(covaGwm, t);
@@ -57,13 +54,13 @@ public class Main {
         t = Target.generate();
         testCovaConservative(covaGwm, t);
 
-        CovaDax covaPM = CovaDaxGWF.build(18,12,14,8,8,14);
+        CovaDax covaPM = CovaDaxPM.build(18,12,14,8,8,14);
         covaPM.levelUp(BaseClass.PALADIN, 8);
         covaPM.equipWeapon(new Glaive());
         covaPM.equipArmor(new Plate());
 //        covaPM.bless();
 
-        System.out.println("\n\n -------POLEARM MASTER-------\n\n");
+        System.out.println("\n\n -------POLEARM MASTER-------");
 
         t = Target.generate();
         testCovaLiberal(covaPM, t);
@@ -78,7 +75,7 @@ public class Main {
         covaGPM.equipArmor(new Plate());
 //        covaPM.bless();
 
-        System.out.println("\n\n -------GREAT POLEARM MASTER-------\n\n");
+        System.out.println("\n\n -------GREAT POLEARM MASTER-------");
 
         t = Target.generate();
         testCovaLiberal(covaGPM, t);
@@ -97,7 +94,7 @@ public class Main {
         int kills = 0;
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < numOfRounds; j++) {
-                int damage = cova.attackLiberally((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
+                int damage = cova.liberalMultiAttack((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
                 t.takeDamage(damage);
                 totalDamage += damage;
                 if (t.getHp() < 1) {
@@ -116,7 +113,7 @@ public class Main {
         int kills = 0;
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < numOfRounds; j++) {
-                int damage = cova.attackEconomically((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
+                int damage = cova.economicMultiAttack((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
                 t.takeDamage(damage);
                 totalDamage += damage;
                 if (t.getHp() < 1) {
@@ -136,7 +133,7 @@ public class Main {
         int kills = 0;
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < numOfRounds; j++) {
-                int damage = cova.attackConservatively((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
+                int damage = cova.conservativeMultiAttack((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
                 t.takeDamage(damage);
                 totalDamage += damage;
                 if (t.getHp() < 1) {

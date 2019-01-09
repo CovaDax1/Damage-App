@@ -5,13 +5,14 @@ import com.damagesimulator.equipment.weapon.attributes.DamageType;
 import com.damagesimulator.equipment.weapon.core.GreatWeapon;
 import com.damagesimulator.equipment.weapon.core.MeleeWeapon;
 import com.damagesimulator.equipment.weapon.core.Polearm;
+import com.damagesimulator.equipment.weapon.core.PolearmHaft;
 import com.damagesimulator.global.Advantage;
 import com.damagesimulator.global.AttackResult;
 import com.damagesimulator.global.Die;
 import com.damagesimulator.global.d20;
 
 public class Glaive extends MeleeWeapon implements Polearm, GreatWeapon {
-    private Die pmDamageDie;
+    private PolearmHaft haft;
 
     public Glaive() {
         super(AbilityScore.AbilityScores.STRENGTH, 0);
@@ -29,38 +30,39 @@ public class Glaive extends MeleeWeapon implements Polearm, GreatWeapon {
         this.twoHanded = true;
         this.reach = true;
         this.damageType = DamageType.Slashing;
-        this.pmDamageDie = new Die(1, 4);
+        this.haft = new PolearmHaft(this);
     }
 
-    @Override
-    public AttackResult polearmMasterAttack(int toAttackBonus, Advantage advantage, int targetAc) {
-        return rollAttack(toAttackBonus, advantage, targetAc);
+    public PolearmHaft getHaft() {
+        return haft;
     }
-
-    @Override
-    public int rollPolearmMasterDamage() {
-        int bonusDamage = getEnchantmentDamage();
-        if(bonusDamageDie != null) bonusDamage += bonusDamageDie.roll();
-        return pmDamageDie.roll() + bonusDamage;
-    }
-
-    @Override
-    public int polearmMaxDamage() {
-        return pmDamageDie.getDie();
-    }
-
-    @Override
-    public AttackResult rollPowerAttack(int toAttackBonus, Advantage advantage, int targetAc) {
-        int attackRoll = d20.getDie().roll(advantage);
-        if (attackRoll == 20) return AttackResult.CRIT;
-        else if (attackRoll == 1) return AttackResult.MISS;
-        else return (attackRoll + toAttackBonus + getEnchantmentBonus() - 5 < targetAc) ? AttackResult.MISS : AttackResult.HIT;
-    }
-
-    @Override
-    public int rollPowerDamage() {
-        int bonusDamage = getEnchantmentDamage() + 10;
-        if(bonusDamageDie != null) bonusDamage += bonusDamageDie.roll();
-        return damageDie.roll() + bonusDamage;
-    }
+//    @Override
+//    public AttackResult polearmMasterAttack(int toAttackBonus, Advantage advantage, int targetAc) {
+//        return this.haft.polearmMasterAttack(toAttackBonus, advantage, targetAc);
+//    }
+//
+//    @Override
+//    public int rollPolearmMasterDamage() {
+//        return this.haft.rollPolearmMasterDamage();
+//    }
+//
+//    @Override
+//    public int polearmMaxDamage() {
+//        return this.haft.polearmMaxDamage();
+//    }
+//
+//    @Override
+//    public AttackResult rollPowerAttack(int toAttackBonus, Advantage advantage, int targetAc) {
+//        int attackRoll = d20.getDie().roll(advantage);
+//        if (attackRoll == 20) return AttackResult.CRIT;
+//        else if (attackRoll == 1) return AttackResult.MISS;
+//        else return (attackRoll + toAttackBonus + getEnchantmentBonus() - 5 < targetAc) ? AttackResult.MISS : AttackResult.HIT;
+//    }
+//
+//    @Override
+//    public int rollPowerDamage() {
+//        int bonusDamage = getEnchantmentDamage() + 10;
+//        if(bonusDamageDie != null) bonusDamage += bonusDamageDie.roll();
+//        return damageDie.roll() + bonusDamage;
+//    }
 }

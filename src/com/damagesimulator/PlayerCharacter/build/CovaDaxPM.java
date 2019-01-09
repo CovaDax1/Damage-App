@@ -4,12 +4,16 @@ import com.damagesimulator.PlayerCharacter.AbilityScore;
 import com.damagesimulator.PlayerCharacter.PlayerClass.SpellCaster;
 import com.damagesimulator.PlayerCharacter.PlayerClass.paladin.OathOfVengeance;
 import com.damagesimulator.PlayerCharacter.Target;
+import com.damagesimulator.PlayerCharacter.feat.PolearmMaster;
 import com.damagesimulator.equipment.weapon.core.MeleeWeapon;
 import com.damagesimulator.equipment.weapon.core.Polearm;
 import com.damagesimulator.equipment.weapon.core.Weapon;
 import com.damagesimulator.global.Advantage;
 import com.damagesimulator.global.AttackResult;
 import com.damagesimulator.global.d4;
+
+import static com.damagesimulator.global.AttackResult.CRIT;
+import static com.damagesimulator.global.AttackResult.MISS;
 
 public class CovaDaxPM extends CovaDax implements SpellCaster, OathOfVengeance, PolearmMaster {
     public CovaDaxPM(AbilityScore strength, AbilityScore dexterity, AbilityScore constitution, AbilityScore intelligence, AbilityScore wisdom, AbilityScore charisma) {
@@ -27,121 +31,39 @@ public class CovaDaxPM extends CovaDax implements SpellCaster, OathOfVengeance, 
                 new AbilityScore(h));
     }
 
-    //attack liberally
-    //power attack, smite using highest first, spell smite as BA?
-    public int attackLiberally(MeleeWeapon weapon, Target target, Advantage advantage) {
-        int damage = 0;
-        int toAttackBonus = getAttackAbsBonus(weapon) + (blessed ? d4.getDie().roll() : 0);
-        int toDamageBonus = (weapon.finesse() && dexterity.getMod() > strength.getMod() ? dexterity.getMod() : strength.getMod());
-
-        for (int i = 0; i < 2; i++) {
-            AttackResult attackRoll = weaponAttack(weapon, target, advantage, toAttackBonus);
-            if (attackRoll != AttackResult.MISS) {
-                damage += weapon.rollDamage() + toDamageBonus;
-                damage += improvedSmite();
-                int smiteSlot = 0;
-                if(target.isBloodied()) {
-                    smiteSlot = this.getHighestAvailableSpellSlot();
-                } else {
-                    smiteSlot = this.getLowestAvailableSpellSlot();
-                }
-                damage += smite(smiteSlot, target.isUndead());
-                if (attackRoll == AttackResult.CRIT) {
-                    damage += weapon.getMaxDamage();
-                    damage += smiteDie.maxDamage(smiteSlot, target.isUndead());
-                }
-            }
+    //attack economically
+    //power attack if adv, smite using lowest first
+    // Max AC = attackBonus - damage/2 + 16
+    @Override
+    public int economicMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
+        int damage = super.economicMultiAttack(weapon, target, advantage);
+        if (bonusActionAvailable) {
+            bonusActionAvailable = false;
+            damage += rollEconomicAttack(((Polearm) weapon).getHaft(), target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
         }
-
-        if(weapon instanceof Polearm) {
-            AttackResult attackRoll2 = polearmAttack(((Polearm) weapon), target, advantage, toAttackBonus);
-            if (attackRoll2 != AttackResult.MISS) {
-                damage += ((Polearm) weapon).rollPolearmMasterDamage() + toDamageBonus;
-                damage += improvedSmite();
-                int smiteSlot = 0;
-                if(target.isBloodied()) {
-                    smiteSlot = this.getHighestAvailableSpellSlot();
-                } else {
-                    smiteSlot = this.getLowestAvailableSpellSlot();
-                }
-                damage += smite(smiteSlot, target.isUndead());
-                if (attackRoll2 == AttackResult.CRIT) {
-                    damage += weapon.getMaxDamage();
-                    damage += smiteDie.maxDamage(smiteSlot, target.isUndead());
-                }
-            }
-        }
-
         return damage;
     }
 
-    //attack economically
-    //power attack if adv, smite using lowest first
-    public int attackEconomically(MeleeWeapon weapon, Target target, Advantage advantage) {
-        int damage = 0;
-        int toAttackBonus = getAttackAbsBonus(weapon) + (blessed ? d4.getDie().roll() : 0);
-        int toDamageBonus = (weapon.finesse() && dexterity.getMod() > strength.getMod() ? dexterity.getMod() : strength.getMod());
-
-        for (int i = 0; i < 2; i++) {
-            AttackResult attackRoll = weaponAttack(weapon, target, advantage, toAttackBonus);
-            if (attackRoll != AttackResult.MISS) {
-                damage += weapon.rollDamage() + toDamageBonus;
-                damage += improvedSmite();
-                int smiteSlot = 0;
-                if(target.isBloodied()) {
-                    smiteSlot = this.getLowestAvailableSpellSlot();
-                }
-                damage += smite(smiteSlot, target.isUndead());
-                if (attackRoll == AttackResult.CRIT) {
-                    damage += weapon.getMaxDamage();
-                    damage += smiteDie.maxDamage(smiteSlot, target.isUndead());
-                }
-            }
-        }
-        if(weapon instanceof Polearm) {
-            AttackResult attackRoll2 = polearmAttack(((Polearm) weapon), target, advantage, toAttackBonus);
-            if (attackRoll2 != AttackResult.MISS) {
-                damage += ((Polearm) weapon).rollPolearmMasterDamage() + toDamageBonus;
-                damage += improvedSmite();
-                int smiteSlot = 0;
-                if(target.isBloodied()) {
-                    smiteSlot = this.getLowestAvailableSpellSlot();
-                }
-                damage += smite(smiteSlot, target.isUndead());
-                if (attackRoll2 == AttackResult.CRIT) { //if the CLEAVE crits as well
-                    damage += weapon.getMaxDamage();
-                    damage += smiteDie.maxDamage(smiteSlot, target.isUndead());
-                }
-            }
+    //attack liberally
+    //always power attack
+    // if target hp > half, smite using highest otherwise smite using lowest
+    // if kill or crit, cleave, otherwise polearm
+    public int liberalMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
+        int damage = super.liberalMultiAttack(weapon, target, advantage);
+        if (bonusActionAvailable) {
+            bonusActionAvailable = false;
+            damage += rollLiberalAttack(((Polearm) weapon).getHaft(), target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
         }
         return damage;
     }
 
     //attack conservatively
     //power attack if adv, no smite
-    public int attackConservatively(MeleeWeapon weapon, Target target, Advantage advantage) {
-        int damage = 0;
-        int toAttackBonus = getAttackAbsBonus(weapon) + (blessed ? d4.getDie().roll() : 0);
-        int toDamageBonus = (weapon.finesse() && dexterity.getMod() > strength.getMod() ? dexterity.getMod() : strength.getMod());
-
-        for (int i = 0; i < 2; i++) {
-            AttackResult attackRoll = weaponAttack(weapon, target, advantage, toAttackBonus);
-            if (attackRoll != AttackResult.MISS) {
-                damage += weapon.rollDamage() + toDamageBonus;
-                damage += improvedSmite();
-                if (attackRoll == AttackResult.CRIT)
-                    damage += weapon.getMaxDamage();
-            }
-        }
-        if(weapon instanceof Polearm) {
-            AttackResult attackRoll2 = polearmAttack(((Polearm) weapon), target, advantage, toAttackBonus);
-            if (attackRoll2 != AttackResult.MISS) {
-                damage += ((Polearm) weapon).rollPolearmMasterDamage() + toDamageBonus;
-                damage += improvedSmite();
-                if (attackRoll2 == AttackResult.CRIT) { //if the CLEAVE crits as well
-                    damage += weapon.getMaxDamage();
-                }
-            }
+    public int conservativeMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
+        int damage = super.conservativeMultiAttack(weapon, target, advantage);
+        if (bonusActionAvailable) {
+            bonusActionAvailable = false;
+            damage += rollConservativeAttack(((Polearm) weapon).getHaft(), target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
         }
         return damage;
     }
@@ -153,6 +75,6 @@ public class CovaDaxPM extends CovaDax implements SpellCaster, OathOfVengeance, 
 
     @Override
     public AttackResult polearmAttack(Polearm weapon, Target target, Advantage advantage, int attackBonus) {
-        return weapon.polearmMasterAttack(attackBonus, advantage, target.getAc());
+        return weapon.getHaft().rollAttack(attackBonus, advantage, target.getAc());
     }
 }
