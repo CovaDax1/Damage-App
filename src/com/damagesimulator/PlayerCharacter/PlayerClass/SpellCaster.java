@@ -1,9 +1,9 @@
 package com.damagesimulator.PlayerCharacter.PlayerClass;
 
+import com.damagesimulator.PlayerCharacter.SpellCasterSlots;
+
 public interface SpellCaster extends MagicAdept {
-    int getCasterLevel();
-    int getHighestAvailableSpellSlot();
-    int getLowestAvailableSpellSlot();
-    int getSpellSlotsByLevel(int i);
+    int getSpellCasterLevel();
+    SpellCasterSlots getSpellSlots();
 }
 

@@ -1,5 +1,8 @@
 package com.damagesimulator.PlayerCharacter.PlayerClass;
 
-public interface PactCaster extends MagicAdept {
+import com.damagesimulator.PlayerCharacter.PactSlots;
 
+public interface PactCaster extends MagicAdept {
+    int getPactCasterLevel();
+    PactSlots getPactSlots();
 }

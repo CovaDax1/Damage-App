@@ -1,8 +1,10 @@
 package com.damagesimulator.PlayerCharacter.build;
 
 import com.damagesimulator.PlayerCharacter.AbilityScore;
+import com.damagesimulator.PlayerCharacter.PlayerClass.PactCaster;
 import com.damagesimulator.PlayerCharacter.PlayerClass.SpellCaster;
 import com.damagesimulator.PlayerCharacter.PlayerClass.paladin.OathOfVengeance;
+import com.damagesimulator.PlayerCharacter.PlayerClass.warlock.Hexblade;
 import com.damagesimulator.PlayerCharacter.Target;
 import com.damagesimulator.PlayerCharacter.feat.PolearmMaster;
 import com.damagesimulator.equipment.weapon.core.MeleeWeapon;
@@ -15,7 +17,7 @@ import com.damagesimulator.global.d4;
 import static com.damagesimulator.global.AttackResult.CRIT;
 import static com.damagesimulator.global.AttackResult.MISS;
 
-public class CovaDaxPM extends CovaDax implements SpellCaster, OathOfVengeance, PolearmMaster {
+public class CovaDaxPM extends CovaDax<MeleeWeapon> implements SpellCaster, OathOfVengeance, PolearmMaster {
     public CovaDaxPM(AbilityScore strength, AbilityScore dexterity, AbilityScore constitution, AbilityScore intelligence, AbilityScore wisdom, AbilityScore charisma) {
         super(strength, dexterity, constitution, intelligence, wisdom, charisma);
         init();
@@ -31,23 +33,17 @@ public class CovaDaxPM extends CovaDax implements SpellCaster, OathOfVengeance, 
                 new AbilityScore(h));
     }
 
-    //attack economically
-    //power attack if adv, smite using lowest first
     // Max AC = attackBonus - damage/2 + 16
     @Override
     public int economicMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
         int damage = super.economicMultiAttack(weapon, target, advantage);
         if (bonusActionAvailable) {
             bonusActionAvailable = false;
-            damage += rollEconomicAttack(((Polearm) weapon).getHaft(), target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
+            damage += rollEconomicAttack(((Polearm)weapon).getHaft(), target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
         }
         return damage;
     }
 
-    //attack liberally
-    //always power attack
-    // if target hp > half, smite using highest otherwise smite using lowest
-    // if kill or crit, cleave, otherwise polearm
     public int liberalMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
         int damage = super.liberalMultiAttack(weapon, target, advantage);
         if (bonusActionAvailable) {
@@ -57,20 +53,13 @@ public class CovaDaxPM extends CovaDax implements SpellCaster, OathOfVengeance, 
         return damage;
     }
 
-    //attack conservatively
-    //power attack if adv, no smite
     public int conservativeMultiAttack(MeleeWeapon weapon, Target target, Advantage advantage) {
         int damage = super.conservativeMultiAttack(weapon, target, advantage);
         if (bonusActionAvailable) {
             bonusActionAvailable = false;
-            damage += rollConservativeAttack(((Polearm) weapon).getHaft(), target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
+            damage += rollConservativeAttack(((Polearm)weapon).getHaft(), target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
         }
         return damage;
-    }
-
-    @Override
-    public AttackResult weaponAttack(Weapon weapon, Target target, Advantage advantage, int attackBonus) {
-        return weapon.rollAttack(attackBonus, advantage, target.getAc());
     }
 
     @Override

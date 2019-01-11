@@ -5,6 +5,5 @@ import com.damagesimulator.global.AttackResult;
 
 public interface GreatWeapon {
 //    AttackResult rollPowerAttack(int toAttackBonus, Advantage advantage, int targetAc);
-//
 //    int rollPowerDamage();
 }

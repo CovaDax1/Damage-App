@@ -6,5 +6,4 @@ import com.damagesimulator.PlayerCharacter.action.SpellAttack;
 public interface MagicAdept {
     int spellAttack(SpellAttack spellAttack);
     void castSpell(Spell spell);
-    void refreshSpellSlots();
 }

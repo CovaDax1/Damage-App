@@ -6,5 +6,7 @@ import com.damagesimulator.global.Advantage;
 import com.damagesimulator.global.AttackResult;
 
 public interface PolearmMaster {
-    AttackResult polearmAttack(Polearm weapon, Target target, Advantage advantage, int attackBonus);
+    default AttackResult polearmAttack(Polearm weapon, Target target, Advantage advantage, int attackBonus) {
+        return weapon.getHaft().rollAttack(attackBonus, advantage, target.getAc());
+    }
 }

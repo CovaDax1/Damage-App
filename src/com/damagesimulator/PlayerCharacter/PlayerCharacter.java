@@ -1,8 +1,10 @@
 package com.damagesimulator.PlayerCharacter;
 
 import com.damagesimulator.PlayerCharacter.PlayerClass.BaseClass;
+import com.damagesimulator.equipment.weapon.core.Weapon;
+import com.damagesimulator.global.Advantage;
 
-public abstract class PlayerCharacter extends BaseCharacter {
+public abstract class PlayerCharacter<W extends Weapon> extends BaseCharacter<W> {
 
     protected int barbarianLevels;
     protected int bardLevels;
@@ -16,6 +18,7 @@ public abstract class PlayerCharacter extends BaseCharacter {
     protected int sorcererLevels;
     protected int warlockLevels;
     protected int wizardLevels;
+    protected int attackCount = 1;
 
 
     public PlayerCharacter(AbilityScore strength, AbilityScore dexterity, AbilityScore constitution, AbilityScore intelligence, AbilityScore wisdom, AbilityScore charisma) {
@@ -66,4 +69,46 @@ public abstract class PlayerCharacter extends BaseCharacter {
     public int getProficiency() {
         return 2 + Math.floorDiv(getLevel(), 4);
     }
+
+    public abstract void longRest();
+
+    public abstract void shortRest();
+
+    public abstract void shortRest(int hitDie);
+
+    public int conservativeMultiAttack(W weapon, Target target, Advantage advantage) {
+        this.bonusActionAvailable = true;
+        int damage = 0;
+        for (int i = 0; i < this.attackCount; i++)
+            damage += rollConservativeAttack(weapon, target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
+        return damage;
+    }
+
+    protected abstract int rollConservativeAttack(W weapon, Target target, Advantage advantage, int attackBonus, int damageBonus);
+
+    protected abstract int rollConservativeDamage(W weapon, int damageBonus, boolean crit);
+
+    public int economicMultiAttack(W weapon, Target target, Advantage advantage) {
+        this.bonusActionAvailable = true;
+        int damage = 0;
+        for (int i = 0; i < this.attackCount; i++)
+            damage += rollEconomicAttack(weapon, target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
+        return damage;
+    }
+
+    protected abstract int rollEconomicAttack(W weapon, Target target, Advantage advantage, int attackBonus, int damageBonus);
+
+    protected abstract int rollEconomicDamage(W weapon, Target target, int damageBonus, boolean crit);
+
+    public int liberalMultiAttack(W weapon, Target target, Advantage advantage) {
+        this.bonusActionAvailable = true;
+        int damage = 0;
+        for (int i = 0; i < this.attackCount; i++)
+            damage += rollLiberalAttack(weapon, target, advantage, getToAttackBonus(weapon), getToDamageBonus(weapon));
+        return damage;
+    }
+
+    protected abstract int rollLiberalAttack(W weapon, Target target, Advantage advantage, int attackBonus, int damageBonus);
+
+    protected abstract int rollLiberalDamage(W weapon, Target target, int damageBonus, boolean crit);
 }

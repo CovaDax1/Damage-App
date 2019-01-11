@@ -4,13 +4,12 @@ import com.damagesimulator.PlayerCharacter.action.Attack;
 import com.damagesimulator.equipment.armor.Armor;
 import com.damagesimulator.equipment.armor.Shield;
 import com.damagesimulator.equipment.weapon.Unarmed;
-import com.damagesimulator.equipment.weapon.core.MeleeWeapon;
 import com.damagesimulator.equipment.weapon.core.Weapon;
 import com.damagesimulator.global.Advantage;
 import com.damagesimulator.global.AttackResult;
 import com.damagesimulator.global.d4;
 
-public abstract class BaseCharacter {
+public abstract class BaseCharacter<W extends Weapon> {
     protected int hp;
     protected int proficiency;
 
@@ -120,11 +119,11 @@ public abstract class BaseCharacter {
 
     public void equipArmor(Armor armor) { this.armor = armor; }
 
-    public int getToAttackBonus(Weapon weapon) {
+    public int getToAttackBonus(W weapon) {
         return getAttackAbsBonus(weapon) + getProficiency() + weapon.getEnchantmentBonus() + (blessed ? d4.getDie().roll() : 0);
     }
 
-    public int getToDamageBonus(Weapon weapon) {
+    public int getToDamageBonus(W weapon) {
         return getAttackAbsBonus(weapon) + weapon.getEnchantmentBonus();
     }
 
@@ -148,5 +147,5 @@ public abstract class BaseCharacter {
 
     protected abstract int unarmedAttack(Target target, Advantage advantage, int attackBonus, int damageBonus);
 
-    public abstract AttackResult weaponAttack(Weapon weapon, Target target, Advantage advantage, int attackBonus);
+    public abstract AttackResult weaponAttack(W weapon, Target target, Advantage advantage, int attackBonus);
 }

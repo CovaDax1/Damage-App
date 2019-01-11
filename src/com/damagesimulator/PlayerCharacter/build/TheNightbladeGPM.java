@@ -1,29 +1,21 @@
 package com.damagesimulator.PlayerCharacter.build;
 
 import com.damagesimulator.PlayerCharacter.AbilityScore;
-import com.damagesimulator.PlayerCharacter.PlayerClass.SpellCaster;
-import com.damagesimulator.PlayerCharacter.PlayerClass.paladin.OathOfVengeance;
 import com.damagesimulator.PlayerCharacter.Target;
 import com.damagesimulator.PlayerCharacter.feat.GreatWeaponMastery;
 import com.damagesimulator.PlayerCharacter.feat.PolearmMaster;
 import com.damagesimulator.equipment.weapon.core.MeleeWeapon;
 import com.damagesimulator.equipment.weapon.core.Polearm;
-import com.damagesimulator.equipment.weapon.core.Weapon;
 import com.damagesimulator.global.Advantage;
-import com.damagesimulator.global.AttackResult;
-import com.damagesimulator.global.d4;
 
-import static com.damagesimulator.global.AttackResult.CRIT;
-import static com.damagesimulator.global.AttackResult.MISS;
+public class TheNightbladeGPM extends TheNightbladeGWM implements GreatWeaponMastery, PolearmMaster {
 
-public class CovaDaxGPF extends CovaDaxGWF implements SpellCaster, OathOfVengeance, PolearmMaster, GreatWeaponMastery {
-    public CovaDaxGPF(AbilityScore strength, AbilityScore dexterity, AbilityScore constitution, AbilityScore intelligence, AbilityScore wisdom, AbilityScore charisma) {
+    public TheNightbladeGPM(AbilityScore strength, AbilityScore dexterity, AbilityScore constitution, AbilityScore intelligence, AbilityScore wisdom, AbilityScore charisma) {
         super(strength, dexterity, constitution, intelligence, wisdom, charisma);
-        init();
     }
 
-    public static CovaDaxGPF build(int s, int d, int c, int i, int w, int h) {
-        return new CovaDaxGPF(
+    public static TheNightbladeGPM build(int s, int d, int c, int i, int w, int h) {
+        return new TheNightbladeGPM(
                 new AbilityScore(s),
                 new AbilityScore(d),
                 new AbilityScore(c),

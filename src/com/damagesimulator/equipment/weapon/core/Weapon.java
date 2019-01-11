@@ -56,9 +56,19 @@ public abstract class Weapon implements Attack {
         return light;
     }
 
+    @Override
     public AttackResult rollAttack(int toAttackBonus, Advantage advantage, int targetAc) {
         int attackRoll = d20.getDie().roll(advantage);
         if (attackRoll == 20) return AttackResult.CRIT;
+        else if (attackRoll == 1) return AttackResult.MISS;
+        else
+            return (attackRoll + toAttackBonus + getEnchantmentBonus() < targetAc) ? AttackResult.MISS : AttackResult.HIT;
+    }
+
+    @Override
+    public AttackResult rollAttack(int toAttackBonus, Advantage advantage, int targetAc, int critRange) {
+        int attackRoll = d20.getDie().roll(advantage);
+        if (attackRoll == critRange) return AttackResult.CRIT;
         else if (attackRoll == 1) return AttackResult.MISS;
         else
             return (attackRoll + toAttackBonus + getEnchantmentBonus() < targetAc) ? AttackResult.MISS : AttackResult.HIT;

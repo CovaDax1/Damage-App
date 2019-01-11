@@ -9,8 +9,31 @@ import com.damagesimulator.equipment.weapon.Greatsword;
 import com.damagesimulator.equipment.weapon.core.MeleeWeapon;
 
 public class Main {
+    private static final int count = 1000 * 1000;
+    private static final int numOfRounds = 10;
 
     public static void main(String[] args) {
+
+        testCova();
+    }
+
+    public static void testTestCova() {
+        CovaDax cova = CovaDaxGWF.build(16,12,14,8,8,14);
+        cova.levelUp(BaseClass.PALADIN, 4);
+        cova.levelUp(BaseClass.PALADIN, 3);
+        cova.equipWeapon(new Greatsword());
+        cova.equipArmor(new Plate());
+//        cova.bless();
+
+        Target t = Target.generate();
+        testCovaLiberal(cova, t);
+        t = Target.generate();
+        testCovaEconomical(cova, t);
+        t = Target.generate();
+        testCovaConservative(cova, t);
+    }
+
+    public static void testCova() {
         CovaDax cova = CovaDax.build(16,12,14,8,8,14);
         cova.levelUp(BaseClass.PALADIN, 3);
         cova.equipWeapon(new Greatsword());
@@ -83,20 +106,18 @@ public class Main {
         testCovaEconomical(covaGPM, t);
         t = Target.generate();
         testCovaConservative(covaGPM, t);
-
     }
-
-    private static final int count = 1000 * 1000;
-    private static final int numOfRounds = 10;
 
     public static void testCovaLiberal(CovaDax cova, Target t) {
         double totalDamage = 0;
+        double misses = 0;
         int kills = 0;
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < numOfRounds; j++) {
-                int damage = cova.liberalMultiAttack((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
+                int damage = cova.liberalMultiAttack(cova.getMhWeapon(), t, t.getAdvOnHit());
                 t.takeDamage(damage);
                 totalDamage += damage;
+                if(damage == 0) misses++;
                 if (t.getHp() < 1) {
                     t = Target.generate();
                     kills++;
@@ -104,17 +125,20 @@ public class Main {
             }
             cova.longRest();
         }
-
+        double hits = (count * numOfRounds) - misses;
+        System.out.println("Liberal Cova has an acurassy of " + (hits / (hits + misses)) * 100 + "%" );
         System.out.println("Liberal Cova deals " + totalDamage / (count * numOfRounds) + " damage per round!");
     }
 
     public static void testCovaEconomical(CovaDax cova, Target t) {
         double totalDamage = 0;
         int kills = 0;
+        int misses = 0;
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < numOfRounds; j++) {
                 int damage = cova.economicMultiAttack((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
                 t.takeDamage(damage);
+                if(damage == 0) misses++;
                 totalDamage += damage;
                 if (t.getHp() < 1) {
                     t = Target.generate();
@@ -124,6 +148,8 @@ public class Main {
             cova.longRest();
         }
 
+        double hits = (count * numOfRounds) - misses;
+        System.out.println("Economic Cova has an acurassy of " + (hits / (hits + misses)) * 100 + "%" );
         System.out.println("Economic Cova deals " + totalDamage / (count * numOfRounds) + " damage per round!");
     }
 
@@ -131,11 +157,13 @@ public class Main {
     public static void testCovaConservative(CovaDax cova, Target t) {
         double totalDamage = 0;
         int kills = 0;
+        int misses = 0;
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < numOfRounds; j++) {
                 int damage = cova.conservativeMultiAttack((MeleeWeapon) cova.getMhWeapon(), t, t.getAdvOnHit());
                 t.takeDamage(damage);
                 totalDamage += damage;
+                if(damage == 0) misses++;
                 if (t.getHp() < 1) {
                     t = Target.generate();
                     kills++;
@@ -144,6 +172,8 @@ public class Main {
             cova.longRest();
         }
 
+        double hits = (count * numOfRounds) - misses;
+        System.out.println("Conservative Cova has an acurassy of " + (hits / (hits + misses)) * 100 + "%" );
         System.out.println("Conservative Cova deals " + totalDamage / (count * numOfRounds) + " damage per round!");
     }
 }
