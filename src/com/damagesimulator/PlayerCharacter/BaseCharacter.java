@@ -93,6 +93,10 @@ public abstract class BaseCharacter<W extends Weapon> {
         this.blessed = true;
     }
 
+    public void bless(boolean bless) {
+        this.blessed = bless;
+    }
+
     public Armor getArmor() {
         return armor;
     }

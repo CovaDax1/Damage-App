@@ -6,10 +6,11 @@ import com.damagesimulator.global.Advantage;
 import com.damagesimulator.global.AttackResult;
 
 public interface GreatWeaponMastery {
-    default boolean shouldIPowerAttack(Target t, Advantage adv, MeleeWeapon weapon, int atkBonus) {
+    default boolean shouldIPowerAttack(Target t, Advantage adv, MeleeWeapon weapon, int atkBonus, int dmgBonus) {
         if(adv == Advantage.ADVANTAGE) return true;
         else if(adv == Advantage.DISADVANTAGE) return false;
-        else return (atkBonus + weapon.getEnchantmentBonus() - weapon.getAverageDamage() + 16) >= t.getAc();
+        else
+            return ((atkBonus + weapon.getEnchantmentBonus()) - ((weapon.getAverageDamage() + dmgBonus) / 2) + 16) >= t.getAc();
     }
     default AttackResult powerAttack(MeleeWeapon weapon, Target target, Advantage advantage, int attackBonus) {
         if (weapon.isTwoHanded() && weapon.isHeavy())

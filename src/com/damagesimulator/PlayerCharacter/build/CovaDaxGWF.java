@@ -6,7 +6,8 @@ import com.damagesimulator.PlayerCharacter.PlayerClass.paladin.OathOfVengeance;
 import com.damagesimulator.PlayerCharacter.Target;
 import com.damagesimulator.PlayerCharacter.feat.GreatWeaponMastery;
 import com.damagesimulator.equipment.weapon.core.MeleeWeapon;
-import com.damagesimulator.global.*;
+import com.damagesimulator.global.Advantage;
+import com.damagesimulator.global.AttackResult;
 
 import static com.damagesimulator.global.AttackResult.CRIT;
 import static com.damagesimulator.global.AttackResult.MISS;
@@ -41,7 +42,7 @@ public class CovaDaxGWF extends CovaDax<MeleeWeapon> implements SpellCaster, Oat
     protected int rollEconomicAttack(MeleeWeapon weapon, Target target, Advantage advantage, int attackBonus, int damageBonus) {
         int damage = 0;
         AttackResult attackRoll;
-        if (shouldIPowerAttack(target, advantage, weapon, attackBonus)) {
+        if (shouldIPowerAttack(target, advantage, weapon, attackBonus, damageBonus)) {
             attackRoll = powerAttack(weapon, target, advantage, attackBonus);
             if(attackRoll != MISS) damage += rollEconomicDamage(weapon, target, damageBonus + 10, attackRoll == CRIT);
         } else {
@@ -58,7 +59,7 @@ public class CovaDaxGWF extends CovaDax<MeleeWeapon> implements SpellCaster, Oat
     protected int  rollConservativeAttack(MeleeWeapon weapon, Target target, Advantage advantage, int attackBonus, int damageBonus) {
         AttackResult attackRoll;
         int damage = 0;
-        if (shouldIPowerAttack(target, advantage, weapon, attackBonus)) {
+        if (shouldIPowerAttack(target, advantage, weapon, attackBonus, damageBonus)) {
             attackRoll = powerAttack(weapon, target, advantage, attackBonus);
             if(attackRoll != MISS) damage += rollConservativeDamage(weapon, damageBonus + 10, attackRoll == CRIT);
         } else {

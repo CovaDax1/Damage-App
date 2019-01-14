@@ -34,8 +34,14 @@ public class TheNightblade<M extends MeleeWeapon> extends PlayerCharacter<M> imp
     }
 
     @Override
-    public void longRest() {
+    protected void init() {
+        this.pactSlots = new PactSlots(this);
+        this.spellSlots = new SpellCasterSlots(this);
         super.init();
+    }
+
+    @Override
+    public void longRest() {
         shortRest();
         this.spellSlots.refreshSpellSlots();
     }

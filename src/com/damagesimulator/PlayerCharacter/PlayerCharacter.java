@@ -32,7 +32,6 @@ public abstract class PlayerCharacter<W extends Weapon> extends BaseCharacter<W>
 
     public void levelUp(BaseClass baseClass) {
         levelUp(baseClass, 1);
-        init();
     }
     
     public void levelUp(BaseClass baseClass, int num) {
