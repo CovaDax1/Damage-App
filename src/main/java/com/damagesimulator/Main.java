@@ -19,8 +19,8 @@ public class Main {
     private static final int numOfRounds = 10;
 
     public static void main(String[] args) {
-//        testCova();
-//        System.out.println("\n\n\n");
+        testCova();
+        System.out.println("\n\n\n");
         testTheNightblade();
     }
 
